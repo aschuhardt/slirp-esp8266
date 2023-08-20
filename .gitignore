@@ -4,3 +4,4 @@ venv/
 src/Makefile
 sdkconfig
 build/
+compile_commands.json
