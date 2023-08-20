@@ -3,6 +3,9 @@
 # Makefile for GNU Autoconf
 #
 
+# include the ESP8266 SDK toolchain
+include $(IDF_PATH)/make/project.mk
+
 version = @version@
 srcdir = @srcdir@
 COMMON_DEFS = @DASH_POSIX@ -I. -I${srcdir} @USE_PPP@ -DUSE_MS_DNS #-DDEBUG -DMS_DCC
