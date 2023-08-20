@@ -1,0 +1,44 @@
+cmake_minimum_required(VERSION 3.5)
+
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+
+project(slirp-esp8266 VERSION 0.1.0 LANGUAGES C)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+idf_component_register(
+  SRCS
+    main.c
+    cksum.c
+    debug.c
+    if.c
+    ip_icmp.c
+    ip_input.c
+    ip_output.c
+    mbuf.c
+    misc.c
+    options.c
+    sbuf.c
+    sl.c
+    slcompress.c
+    socket.c
+    tcp_input.c
+    tcp_output.c
+    tcp_subr.c
+    terminal.c
+    ttys.c
+    udp.c
+    ppp.c
+    ppp/auth.c
+    ppp/bsd-comp.c
+    ppp/ccp.c
+    ppp/chap.c
+    ppp/fsm.c
+    ppp/ipcp.c
+    ppp/lcp.c
+    ppp/magic.c
+    ppp/md5.c
+    ppp/pppdfncs.c
+    ppp/upap.c
+  INCLUDE_DIRS
+    ${CMAKE_CURRENT_SOURCE_DIR})
