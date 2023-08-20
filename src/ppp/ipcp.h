@@ -53,9 +53,9 @@ typedef struct ipcp_options {
     int old_vj : 1;		/* use old (short) form of VJ option? */
     int accept_local : 1;	/* accept peer's value for ouraddr */
     int accept_remote : 1;	/* accept peer's value for hisaddr */
-    u_short vj_protocol;	/* protocol value to use in VJ option */
-    u_char maxslotindex, cflag;	/* values for RFC1332 VJ compression neg. */
-    u_int32_t ouraddr, hisaddr;	/* Addresses in NETWORK BYTE ORDER */
+    short vj_protocol;	/* protocol value to use in VJ option */
+    char maxslotindex, cflag;	/* values for RFC1332 VJ compression neg. */
+    __int128_t ouraddr, hisaddr;	/* Addresses in NETWORK BYTE ORDER */
 #ifdef USE_MS_DNS
     u_int32_t dnsaddr[2];	/* Primary and secondary DNS entries */
     u_int32_t winsaddr[2];	/* Primary and secondary WINS entries */
@@ -68,11 +68,11 @@ extern ipcp_options ipcp_gotoptions[];
 extern ipcp_options ipcp_allowoptions[];
 extern ipcp_options ipcp_hisoptions[];
 
-void ipcp_init __P((int));
-void ipcp_open __P((int));
-void ipcp_close __P((int));
-void ipcp_lowerup __P((int));
-void ipcp_lowerdown __P((int));
-void ipcp_input __P((int, u_char *, int));
-void ipcp_protrej __P((int));
-int  ipcp_printpkt __P((u_char *, int, void (*)(), void *));
+void ipcp_init; __P((int));
+void ipcp_open; __P((int));
+void ipcp_close; __P((int));
+void ipcp_lowerup; __P((int));
+void ipcp_lowerdown; __P((int));
+void ipcp_input; __P((int, u_char *, int));
+void ipcp_protrej; __P((int));
+int  ipcp_printpkt; __P((u_char *, int, void (*)(), void *));

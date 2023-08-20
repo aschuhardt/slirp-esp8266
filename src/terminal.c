@@ -12,7 +12,7 @@
  * to use slirp over rsh or whatever.  A tty/pty is not necessary.
  */
 
-#include <slirp.h>
+#include "slirp.h"
 
 void
 term_raw(ttyp)

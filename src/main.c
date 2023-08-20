@@ -8,7 +8,7 @@
 
 #define WANT_SYS_IOCTL_H
 #define WANT_TERMIOS_H
-#include <slirp.h>
+#include "slirp.h"
 #include "main.h"
 
 struct timeval tt;

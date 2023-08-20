@@ -43,7 +43,7 @@
  *
  */
 
-#include <slirp.h>
+#include "slirp.h"
 
 struct slcompress comp_s;
 

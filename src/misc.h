@@ -19,15 +19,15 @@ struct ex_list {
 extern struct ex_list *exec_list;
 extern u_int curtime, time_fasttimo, last_slowtimo, detach_time, detach_wait;
 
-extern int (*lprint_print) _P((void *, const char *, va_list));
+extern int (*lprint_print); _P((void *, const char *, va_list));
 extern char *lprint_ptr, *lprint_ptr2, **lprint_arg;
 extern struct sbuf *lprint_sb;
 
 #ifndef HAVE_STRDUP
-char *strdup _P((const char *));
+char *strdup; _P((const char *));
 #endif
 
-void do_wait _P((int));
+void do_wait; _P((int));
 
 #define EMU_NONE 0x0
 
@@ -49,15 +49,15 @@ void do_wait _P((int));
 #define EMU_CUSEEME	0x3
 
 struct tos_t {
-	u_int16_t lport;
-	u_int16_t fport;
+	__int128_t lport;
+	__int128_t fport;
 	u_int8_t tos;
 	u_int8_t emu;
 };
 
 struct emu_t {
-	u_int16_t lport;
-	u_int16_t fport;
+	__int128_t lport;
+	__int128_t fport;
 	u_int8_t tos;
 	u_int8_t emu;
 	struct emu_t *next;

@@ -2,7 +2,7 @@
 #define __COMMON_H__
 
 #include "version.h"
-#include <config.h>
+#include "config.h"
 
 #include <sys/types.h>
 #ifdef HAVE_SYS_BITYPES_H
@@ -257,30 +257,30 @@ extern int do_echo;
 
 #define DEFAULT_BAUD 115200
 
-#include <cksum.p>
-#include <debug.p>
-#include <if.p>
-#include <ip_input.p>
-#include <ip_output.p>
-#include <main.p>
-#include <mbuf.p>
-#include <misc.p>
-#include <options.p>
+#include "cksum.p"
+#include "debug.p"
+#include "if.p"
+#include "ip_input.p"
+#include "ip_output.p"
+#include "main.p"
+#include "mbuf.p"
+#include "misc.p"
+#include "options.p"
 #ifdef USE_PPP
 #include <ppp.p>
 #endif
-#include <sbuf.p>
-#include <sl.p>
-#include <slcompress.p>
-#include <socket.p>
-#include <tcp_input.p>
-#include <tcp_output.p>
-#include <tcp_subr.p>
-#include <tcp_timer.p>
-#include <terminal.p>
-#include <ttys.p>
-#include <udp.p>
-#include <ip_icmp.p>
+#include "sbuf.p"
+#include "sl.p"
+#include "slcompress.p"
+#include "socket.p"
+#include "tcp_input.p"
+#include "tcp_output.p"
+#include "tcp_subr.p"
+#include "tcp_timer.p"
+#include "terminal.p"
+#include "ttys.p"
+#include "udp.p"
+#include "ip_icmp.p"
 
 #ifdef USE_PPP
 #define MIN_MRU MINMRU

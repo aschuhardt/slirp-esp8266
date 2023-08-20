@@ -11,9 +11,9 @@
 struct cfgtab {
 	char *command;
 	char *command_line;
-	int (*func) _P((char *, struct socket *));
-	u_char type;
-	u_char flags;
+	int (*func); _P((char *, struct socket *));
+	char type;
+	char flags;
 	char *usage_args;
 	char *help;
 };

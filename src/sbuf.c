@@ -5,7 +5,7 @@
  * terms and conditions of the copyright.
  */
 
-#include <slirp.h>
+#include "slirp.h"
 
 /* Done as a macro in socket.h */
 /* int

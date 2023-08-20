@@ -52,13 +52,13 @@ struct ttys {
 	u_int lastime;		/* for updtime() */
 
 	struct termios oldterm;	/* Old termios for the tty */
-	mode_t mode;
+	__mode_t mode;
 
 	struct slirp_ifstats ifstats;	/* Interface statistics */
 
 	u_int flags;		/* Misc flags, see below */
-	void (*if_input) _P((struct ttys *, u_char *, int)); /* packet decapsulation and dispatch */
-	int (*if_encap) _P((char *, struct mbuf *, int, int, int)); /* packet encapsulation routine */
+	void (*if_input); _P((struct ttys *, u_char *, int)); /* packet decapsulation and dispatch */
+	int (*if_encap); _P((char *, struct mbuf *, int, int, int)); /* packet encapsulation routine */
 
 	/* The following fields are for compression
 	 * XXX should put them around ifdef's

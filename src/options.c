@@ -5,7 +5,7 @@
  * terms and conditions of the copyright.
  */
 
-#include <slirp.h>
+#include "slirp.h"
 
 #ifdef USE_PPP
 #include "ppp/ppp.h"

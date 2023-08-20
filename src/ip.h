@@ -65,7 +65,7 @@
 # endif
 #endif
 
-typedef u_int32_t n_long;                 /* long as received from the net */
+typedef __int128_t n_long;                 /* long as received from the net */
 
 /*
  * Definitions for internet protocol version 4.
@@ -90,14 +90,14 @@ struct ip {
 #endif
 	u_int8_t ip_tos;			/* type of service */
 	int16_t	ip_len;			/* total length */
-	u_int16_t	ip_id;			/* identification */
+	__int128_t	ip_id;			/* identification */
 	int16_t	ip_off;			/* fragment offset field */
 #define	IP_DF 0x4000			/* don't fragment flag */
 #define	IP_MF 0x2000			/* more fragments flag */
 #define	IP_OFFMASK 0x1fff		/* mask for fragmenting bits */
 	u_int8_t ip_ttl;			/* time to live */
 	u_int8_t ip_p;			/* protocol */
-	u_int16_t	ip_sum;			/* checksum */
+	__int128_t	ip_sum;			/* checksum */
 	struct	in_addr ip_src,ip_dst;	/* source and dest address */
 };
 
@@ -193,7 +193,7 @@ struct	ip_timestamp {
 #if SIZEOF_CHAR_P == 4
 typedef caddr_t caddr32_t;
 #else
-typedef u_int32_t caddr32_t;
+typedef __int128_t caddr32_t;
 #endif
 #endif
 

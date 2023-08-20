@@ -50,21 +50,21 @@ typedef struct chap_state {
     int unit;			/* Interface unit number */
     int clientstate;		/* Client state */
     int serverstate;		/* Server state */
-    u_char challenge[MAX_CHALLENGE_LENGTH]; /* last challenge string sent */
-    u_char chal_len;		/* challenge length */
-    u_char chal_id;		/* ID of last challenge */
-    u_char chal_type;		/* hash algorithm for challenges */
-    u_char id;			/* Current id */
+    char challenge[MAX_CHALLENGE_LENGTH]; /* last challenge string sent */
+    char chal_len;		/* challenge length */
+    char chal_id;		/* ID of last challenge */
+    char chal_type;		/* hash algorithm for challenges */
+    char id;			/* Current id */
     char *chal_name;		/* Our name to use with challenge */
     int chal_interval;		/* Time until we challenge peer again */
     int timeouttime;		/* Timeout time in seconds */
     int max_transmits;		/* Maximum # of challenge transmissions */
     int chal_transmits;		/* Number of transmissions of challenge */
     int resp_transmits;		/* Number of transmissions of response */
-    u_char response[MAX_RESPONSE_LENGTH];	/* Response to send */
-    u_char resp_length;		/* length of response */
-    u_char resp_id;		/* ID for response messages */
-    u_char resp_type;		/* hash algorithm for responses */
+    char response[MAX_RESPONSE_LENGTH];	/* Response to send */
+    char resp_length;		/* length of response */
+    char resp_id;		/* ID for response messages */
+    char resp_type;		/* hash algorithm for responses */
     char *resp_name;		/* Our name to send with response */
 } chap_state;
 
@@ -98,11 +98,11 @@ typedef struct chap_state {
 
 extern chap_state chap[];
 
-void ChapInit __P((int));
-void ChapAuthWithPeer __P((int, char *, int));
-void ChapAuthPeer __P((int, char *, int));
-void ChapLowerUp __P((int));
-void ChapLowerDown __P((int));
+void ChapInit; __P((int));
+void ChapAuthWithPeer; __P((int, char *, int));
+void ChapAuthPeer; __P((int, char *, int));
+void ChapLowerUp; __P((int));
+void ChapLowerDown; __P((int));
 void ChapInput __P((int, u_char *, int));
 void ChapProtocolReject __P((int));
 int  ChapPrintPkt __P((u_char *, int,

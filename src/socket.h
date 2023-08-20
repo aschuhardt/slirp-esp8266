@@ -31,13 +31,13 @@ struct socket {
   int so_urgc;
   struct in_addr so_faddr;	   /* foreign host table entry */
   struct in_addr so_laddr;	   /* local host table entry */
-  u_int16_t so_fport;		   /* foreign port */
-  u_int16_t so_lport;		   /* local port */
+  __int128_t so_fport;		   /* foreign port */
+  __int128_t so_lport;		   /* local port */
   
   u_int8_t	so_iptos;	/* Type of service */
   u_int8_t	so_emu;		/* Is the socket emulated? */
   
-  u_char	so_type;		/* Type of socket, UDP or TCP */
+  char	so_type;		/* Type of socket, UDP or TCP */
   int	so_state;		/* internal state flags SS_*, below */
   
   struct 	tcpcb *so_tcpcb;	/* pointer to TCP protocol control block */

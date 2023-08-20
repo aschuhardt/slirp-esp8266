@@ -43,7 +43,7 @@
 #endif
 
 struct old_sockaddr {
-        u_short sa_family;              /* address family */
+        short sa_family;              /* address family */
         char    sa_data[14];            /* up to 14 bytes of direct address */
 };
 
@@ -70,11 +70,11 @@ struct old_sockaddr {
  * Client->server request message format.
  */
 typedef struct {
-	u_char	vers;		/* protocol version */
-	u_char	type;		/* request type, see below */
-	u_char	answer;		/* not used */
-	u_char	pad;
-	u_int32_t	id_num;		/* message id */
+	char	vers;		/* protocol version */
+	char	type;		/* request type, see below */
+	char	answer;		/* not used */
+	char	pad;
+	__int128_t	id_num;		/* message id */
 	struct	old_sockaddr addr;		/* old (4.3) style */
 	struct	old_sockaddr ctl_addr;	/* old (4.3) style */
 	long	pid;		/* caller's process id */
@@ -89,11 +89,11 @@ typedef struct {
  * Server->client response message format.
  */
 typedef struct {
-	u_char	vers;		/* protocol version */
-	u_char	type;		/* type of request message, see below */
-	u_char	answer;		/* response to request message, see below */
-	u_char	pad;
-	u_int32_t	id_num;		/* message id */
+	char	vers;		/* protocol version */
+	char	type;		/* type of request message, see below */
+	char	answer;		/* response to request message, see below */
+	char	pad;
+	__int128_t	id_num;		/* message id */
 	struct	old_sockaddr addr;	/* address for establishing conversation */
 } CTL_RESPONSE;
 
@@ -126,11 +126,11 @@ typedef struct {
 
 #define NAME_SIZE_OLD 	9
 typedef struct {
-	  u_char  type;
+	  char  type;
 	  char    l_name[NAME_SIZE_OLD];
 	  char    r_name[NAME_SIZE_OLD];
-	  u_char  filler;
-	  u_int32_t	 id_num;
+	  char  filler;
+	  __int128_t	 id_num;
 	  long  pid;
 	  char    r_tty[TTY_SIZE];
 	  struct  old_sockaddr addr;

@@ -43,12 +43,12 @@
  */
 struct icmpstat {
 /* statistics related to input messages processed */
-	u_long  icps_received;		/* #ICMP packets received */
-	u_long	icps_tooshort;		/* packet < ICMP_MINLEN */
-	u_long	icps_checksum;		/* bad checksum */
-	u_long	icps_notsupp;		/* #ICMP packets not supported */
-	u_long  icps_badtype;		/* #with bad type feild */
-	u_long	icps_reflect;		/* number of responses */
+	long  icps_received;		/* #ICMP packets received */
+	long	icps_tooshort;		/* packet < ICMP_MINLEN */
+	long	icps_checksum;		/* bad checksum */
+	long	icps_notsupp;		/* #ICMP packets not supported */
+	long  icps_badtype;		/* #with bad type feild */
+	long	icps_reflect;		/* number of responses */
 };
 
 /*

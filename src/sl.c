@@ -5,7 +5,7 @@
  * terms and conditions of the copyright.
  */
 
-#include <slirp.h>
+#include "slirp.h"
 
 /* 
  * NOTE: FRAME_END means in_pkt = 0. Any other byte while in_pkt = 0

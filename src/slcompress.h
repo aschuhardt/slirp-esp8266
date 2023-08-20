@@ -118,9 +118,9 @@
  */
 struct cstate {
 	struct cstate *cs_next;	/* next most recently used cstate (xmit only) */
-	u_short cs_hlen;	/* size of hdr (receive only) */
-	u_char cs_id;		/* connection # associated with this state */
-	u_char cs_filler;
+	short cs_hlen;	/* size of hdr (receive only) */
+	char cs_id;		/* connection # associated with this state */
+	char cs_filler;
 	union {
 		char csu_hdr[MAX_HDR];
 		struct ip csu_ip;	/* ip/tcp hdr from most recent packet */
@@ -135,9 +135,9 @@ struct cstate {
  */
 struct slcompress {
 	struct cstate *last_cs;	/* most recently used tstate */
-	u_char last_recv;	/* last rcvd conn. id */
-	u_char last_xmit;	/* last sent conn. id */
-	u_short flags;
+	char last_recv;	/* last rcvd conn. id */
+	char last_xmit;	/* last sent conn. id */
+	short flags;
 	int sls_packets;	/* outbound packets */
 	int sls_compressed;	/* outbound compressed packets */
 	int sls_searches;	/* searches for connection state */

@@ -44,7 +44,7 @@ typedef struct upap_state {
     int us_passwdlen;		/* Password length */
     int us_clientstate;		/* Client state */
     int us_serverstate;		/* Server state */
-    u_char us_id;		/* Current id */
+    char us_id;		/* Current id */
     int us_timeouttime;		/* Timeout (seconds) for auth-req retrans. */
     int us_transmits;		/* Number of auth-reqs sent */
     int us_maxtransmits;	/* Maximum number of auth-reqs to send */
@@ -82,12 +82,12 @@ typedef struct upap_state {
 
 extern upap_state upap[];
 
-void upap_init __P((int));
-void upap_authwithpeer __P((int, char *, char *));
-void upap_authpeer __P((int));
-void upap_lowerup __P((int));
-void upap_lowerdown __P((int));
-void upap_input __P((int, u_char *, int));
-void upap_protrej __P((int));
-int  upap_printpkt __P((u_char *, int,
+void upap_init; __P((int));
+void upap_authwithpeer; __P((int, char *, char *));
+void upap_authpeer; __P((int));
+void upap_lowerup; __P((int));
+void upap_lowerdown; __P((int));
+void upap_input; __P((int, u_char *, int));
+void upap_protrej; __P((int));
+int  upap_printpkt; __P((u_char *, int,
 			void (*) __P((void *, char *, ...)), void *));

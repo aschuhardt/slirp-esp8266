@@ -78,7 +78,7 @@
 /*
  * Extended asyncmap - allows any character to be escaped.
  */
-typedef u_int32_t	ext_accm[8];
+typedef __int128_t	ext_accm[8];
 
 /*
  * What to do with network protocol (NP) packets.

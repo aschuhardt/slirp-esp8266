@@ -42,28 +42,28 @@
  * Per RFC 792, September 1981.
  */
 
-typedef u_int32_t n_time;
+typedef __int128_t n_time;
 
 /*
  * Structure of an icmp header.
  */
 struct icmp {
-	u_char	icmp_type;		/* type of message, see below */
-	u_char	icmp_code;		/* type sub code */
-	u_short	icmp_cksum;		/* ones complement cksum of struct */
+	char	icmp_type;		/* type of message, see below */
+	char	icmp_code;		/* type sub code */
+	short	icmp_cksum;		/* ones complement cksum of struct */
 	union {
-		u_char ih_pptr;			/* ICMP_PARAMPROB */
+		char ih_pptr;			/* ICMP_PARAMPROB */
 		struct in_addr ih_gwaddr;	/* ICMP_REDIRECT */
 		struct ih_idseq {
-			u_short	icd_id;
-			u_short	icd_seq;
+			short	icd_id;
+			short	icd_seq;
 		} ih_idseq;
 		int ih_void;
 
 		/* ICMP_UNREACH_NEEDFRAG -- Path MTU Discovery (RFC1191) */
 		struct ih_pmtu {
-			u_short ipm_void;
-			u_short ipm_nextmtu;
+			short ipm_void;
+			short ipm_nextmtu;
 		} ih_pmtu;
 	} icmp_hun;
 #define	icmp_pptr	icmp_hun.ih_pptr
@@ -83,7 +83,7 @@ struct icmp {
 			struct ip idi_ip;
 			/* options and then 64 bits of data */
 		} id_ip;
-		u_long	id_mask;
+		long	id_mask;
 		char	id_data[1];
 	} icmp_dun;
 #define	icmp_otime	icmp_dun.id_ts.its_otime

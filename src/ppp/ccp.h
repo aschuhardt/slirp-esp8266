@@ -29,7 +29,7 @@
 
 typedef struct ccp_options {
     u_int bsd_compress: 1;	/* do BSD Compress? */
-    u_short bsd_bits;		/* # bits/code for BSD Compress */
+    short bsd_bits;		/* # bits/code for BSD Compress */
 } ccp_options;
 
 extern fsm ccp_fsm[];
@@ -38,14 +38,14 @@ extern ccp_options ccp_gotoptions[];
 extern ccp_options ccp_allowoptions[];
 extern ccp_options ccp_hisoptions[];
 
-void ccp_init __P((int unit));
-void ccp_open __P((int unit));
-void ccp_close __P((int unit));
-void ccp_lowerup __P((int unit));
-void ccp_lowerdown __P((int));
-void ccp_input __P((int unit, u_char *pkt, int len));
-void ccp_protrej __P((int unit));
-int  ccp_printpkt __P((u_char *pkt, int len,
+void ccp_init; __P((int unit));
+void ccp_open; __P((int unit));
+void ccp_close; __P((int unit));
+void ccp_lowerup; __P((int unit));
+void ccp_lowerdown; __P((int));
+void ccp_input; __P((int unit, u_char *pkt, int len));
+void ccp_protrej; __P((int unit));
+int  ccp_printpkt; __P((u_char *pkt, int len,
 			  void (*printer) __P((void *, char *, ...)),
 			  void *arg));
 void ccp_datainput __P((int unit, u_char *pkt, int len));

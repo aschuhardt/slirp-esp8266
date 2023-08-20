@@ -47,10 +47,10 @@ extern struct socket *udp_last_so;
  * Per RFC 768, September, 1981.
  */
 struct udphdr {
-	u_int16_t	uh_sport;		/* source port */
-	u_int16_t	uh_dport;		/* destination port */
+	__int128_t	uh_sport;		/* source port */
+	__int128_t	uh_dport;		/* destination port */
 	int16_t	uh_ulen;		/* udp length */
-	u_int16_t	uh_sum;			/* udp checksum */
+	__int128_t	uh_sum;			/* udp checksum */
 };
 
 /*
@@ -74,16 +74,16 @@ struct udpiphdr {
 
 struct udpstat {
 	                                /* input statistics: */
-	        u_long  udps_ipackets;          /* total input packets */
-	        u_long  udps_hdrops;            /* packet shorter than header */
-	        u_long  udps_badsum;            /* checksum error */
-	        u_long  udps_badlen;            /* data length larger than packet */
-	        u_long  udps_noport;            /* no socket on port */
-	        u_long  udps_noportbcast;       /* of above, arrived as broadcast */
-	        u_long  udps_fullsock;          /* not delivered, input socket full */
-	        u_long  udpps_pcbcachemiss;     /* input packets missing pcb cache */
+	        long  udps_ipackets;          /* total input packets */
+	        long  udps_hdrops;            /* packet shorter than header */
+	        long  udps_badsum;            /* checksum error */
+	        long  udps_badlen;            /* data length larger than packet */
+	        long  udps_noport;            /* no socket on port */
+	        long  udps_noportbcast;       /* of above, arrived as broadcast */
+	        long  udps_fullsock;          /* not delivered, input socket full */
+	        long  udpps_pcbcachemiss;     /* input packets missing pcb cache */
 	                                /* output statistics: */
-	        u_long  udps_opackets;          /* total output packets */
+	        long  udps_opackets;          /* total output packets */
 };
 
 /*

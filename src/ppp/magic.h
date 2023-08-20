@@ -19,5 +19,5 @@
  * $Id: magic.h,v 1.3 1994/09/21 06:47:37 paulus Exp $
  */
 
-void magic_init __P((void));	/* Initialize the magic number generator */
-u_int32_t magic __P((void));	/* Returns the next magic number */
+void magic_init; __P((void));	/* Initialize the magic number generator */
+__int128_t magic; __P((void));	/* Returns the next magic number */

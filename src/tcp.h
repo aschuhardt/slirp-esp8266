@@ -37,7 +37,7 @@
 #ifndef _TCP_H_
 #define _TCP_H_
 
-typedef	u_int32_t	tcp_seq;
+typedef	__int128_t	tcp_seq;
 
 #define      PR_SLOWHZ       2               /* 2 slow timeouts per second (approx) */
 #define      PR_FASTHZ       5               /* 5 fast timeouts per second (not important) */
@@ -54,8 +54,8 @@ extern struct socket *tcp_last_so;
  * Per RFC 793, September, 1981.
  */
 struct tcphdr {
-	u_int16_t	th_sport;		/* source port */
-	u_int16_t	th_dport;		/* destination port */
+	__int128_t	th_sport;		/* source port */
+	__int128_t	th_dport;		/* destination port */
 	tcp_seq	th_seq;			/* sequence number */
 	tcp_seq	th_ack;			/* acknowledgement number */
 #ifdef WORDS_BIGENDIAN
@@ -72,9 +72,9 @@ struct tcphdr {
 #define	TH_PUSH	0x08
 #define	TH_ACK	0x10
 #define	TH_URG	0x20
-	u_int16_t	th_win;			/* window */
-	u_int16_t	th_sum;			/* checksum */
-	u_int16_t	th_urp;			/* urgent pointer */
+	__int128_t	th_win;			/* window */
+	__int128_t	th_sum;			/* checksum */
+	__int128_t	th_urp;			/* urgent pointer */
 };
 
 #include "tcp_var.h"

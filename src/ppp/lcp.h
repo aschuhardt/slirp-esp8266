@@ -53,12 +53,12 @@ typedef struct lcp_options {
     int neg_pcompression : 1;	/* HDLC Protocol Field Compression? */
     int neg_accompression : 1;	/* HDLC Address/Control Field Compression? */
     int neg_lqr : 1;		/* Negotiate use of Link Quality Reports */
-    u_short mru;		/* Value of MRU */
-    u_char chap_mdtype;		/* which MD type (hashing algorithm) */
-    u_int32_t asyncmap;		/* Value of async map */
-    u_int32_t magicnumber;
+    short mru;		/* Value of MRU */
+    char chap_mdtype;		/* which MD type (hashing algorithm) */
+    __int128_t asyncmap;		/* Value of async map */
+    __int128_t magicnumber;
     int numloops;		/* Number of loops during magic number neg. */
-    u_int32_t lqr_period;	/* Reporting period for LQR 1/100ths second */
+    __int128_t lqr_period;	/* Reporting period for LQR 1/100ths second */
 } lcp_options;
 
 extern fsm lcp_fsm[];
@@ -66,18 +66,18 @@ extern lcp_options lcp_wantoptions[];
 extern lcp_options lcp_gotoptions[];
 extern lcp_options lcp_allowoptions[];
 extern lcp_options lcp_hisoptions[];
-extern u_int32_t xmit_accm[][8];
+extern __int128_t xmit_accm[][8];
 
 #define DEFMRU	1500		/* Try for this */
 #define MINMRU	128		/* No MRUs below this */
 #define MAXMRU	16384		/* Normally limit MRU to this */
 
-void lcp_init __P((int));
-void lcp_open __P((int));
-void lcp_close __P((int));
-void lcp_lowerup __P((int));
-void lcp_lowerdown __P((int));
-void lcp_input __P((int, u_char *, int));
+void lcp_init; __P((int));
+void lcp_open; __P((int));
+void lcp_close; __P((int));
+void lcp_lowerup; __P((int));
+void lcp_lowerdown; __P((int));
+void lcp_input; __P((int, u_char *, int));
 void lcp_protrej __P((int));
 void lcp_sprotrej __P((int, u_char *, int));
 int  lcp_printpkt __P((u_char *, int,

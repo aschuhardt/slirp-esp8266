@@ -47,36 +47,36 @@ struct compressor {
 	int	compress_proto;	/* CCP compression protocol number */
 
 	/* Allocate space for a compressor (transmit side) */
-	void	*(*comp_alloc) __P((u_char *options, int opt_len));
+	void	*(*comp_alloc); __P((u_char *options, int opt_len));
 	/* Free space used by a compressor */
-	void	(*comp_free) __P((void *state));
+	void	(*comp_free); __P((void *state));
 	/* Initialize a compressor */
-	int	(*comp_init) __P((void *state, u_char *options, int opt_len,
+	int	(*comp_init); __P((void *state, u_char *options, int opt_len,
 				  int unit, int hdrlen, int debug));
 	/* Reset a compressor */
-	void	(*comp_reset) __P((void *state));
+	void	(*comp_reset); __P((void *state));
 	/* Compress a packet */
-	int	(*compress) __P((void *state, PACKETPTR *mret,
+	int	(*compress); __P((void *state, PACKETPTR *mret,
 				 PACKETPTR mp, int orig_len, int max_len, int proto));
 	/* Return compression statistics */
-	void	(*comp_stat) __P((void *state, struct compstat *stats));
+	void	(*comp_stat); __P((void *state, struct compstat *stats));
 
 	/* Allocate space for a decompressor (receive side) */
-	void	*(*decomp_alloc) __P((u_char *options, int opt_len));
+	void	*(*decomp_alloc); __P((u_char *options, int opt_len));
 	/* Free space used by a decompressor */
-	void	(*decomp_free) __P((void *state));
+	void	(*decomp_free); __P((void *state));
 	/* Initialize a decompressor */
-	int	(*decomp_init) __P((void *state, u_char *options, int opt_len,
+	int	(*decomp_init); __P((void *state, u_char *options, int opt_len,
 				    int unit, int hdrlen, int mru, int debug));
 	/* Reset a decompressor */
-	void	(*decomp_reset) __P((void *state));
+	void	(*decomp_reset); __P((void *state));
 	/* Decompress a packet. */
-	int	(*decompress) __P((void *state, PACKETPTR mp,
+	int	(*decompress); __P((void *state, PACKETPTR mp,
 				   PACKETPTR *dmpp));
 	/* Update state for an incompressible packet received */
-	void	(*incomp) __P((void *state, PACKETPTR mp, int proto));
+	void	(*incomp); __P((void *state, PACKETPTR mp, int proto));
 	/* Return decompression statistics */
-	void	(*decomp_stat) __P((void *state, struct compstat *stats));
+	void	(*decomp_stat); __P((void *state, struct compstat *stats));
 };
 
 /*

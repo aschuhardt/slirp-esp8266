@@ -4,12 +4,12 @@
 struct bsd_db {
 	int     totlen;                     /* length of this structure */
 	u_int   hsize;                      /* size of the hash table */
-	u_char  hshift;                     /* used in hash function */
-	u_char  n_bits;                     /* current bits/code */
-	u_char  maxbits;
-	u_char  debug;
-	u_char  unit;
-	u_int16_t seqno;                      /* sequence # of next packet */
+	char  hshift;                     /* used in hash function */
+	char  n_bits;                     /* current bits/code */
+	char  maxbits;
+	char  debug;
+	char  unit;
+	__int128_t seqno;                      /* sequence # of next packet */
 	u_int   hdrlen;                     /* header length to preallocate */
 	u_int   mru;
 	u_int   maxmaxcode;                 /* largest valid code */

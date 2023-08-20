@@ -64,9 +64,9 @@ typedef struct fsm {
     int protocol;		/* Data Link Layer Protocol field value */
     int state;			/* State */
     int flags;			/* Contains option bits */
-    u_char id;			/* Current id */
-    u_char reqid;		/* Current request id */
-    u_char seen_ack;		/* Have received valid Ack/Nak/Rej to Req */
+    char id;			/* Current id */
+    char reqid;		/* Current request id */
+    char seen_ack;		/* Have received valid Ack/Nak/Rej to Req */
     int timeouttime;		/* Timeout time in milliseconds */
     int maxconfreqtransmits;	/* Maximum Configure-Request transmissions */
     int retransmits;		/* Number of retransmissions left */
@@ -112,14 +112,14 @@ typedef struct fsm {
 /*
  * Prototypes
  */
-void fsm_init __P((fsm *));
-void fsm_lowerup __P((fsm *));
-void fsm_lowerdown __P((fsm *));
-void fsm_open __P((fsm *));
-void fsm_close __P((fsm *));
-void fsm_input __P((fsm *, u_char *, int));
-void fsm_protreject __P((fsm *));
-void fsm_sdata __P((fsm *, int, int, u_char *, int));
+void fsm_init; __P((fsm *));
+void fsm_lowerup; __P((fsm *));
+void fsm_lowerdown; __P((fsm *));
+void fsm_open; __P((fsm *));
+void fsm_close; __P((fsm *));
+void fsm_input; __P((fsm *, u_char *, int));
+void fsm_protreject; __P((fsm *));
+void fsm_sdata; __P((fsm *, int, int, u_char *, int));
 
 
 /*

@@ -6,7 +6,7 @@
  */
 
 #define WANT_SYS_IOCTL_H
-#include <slirp.h>
+#include "slirp.h"
 #include <assert.h>
 
 u_int curtime, time_fasttimo, last_slowtimo, detach_time;
